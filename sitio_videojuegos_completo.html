@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Portal Gamer - Categorías y Recomendaciones</title>
+<style>
+body {font-family: Arial, sans-serif; background:#0d0d0d; color:white; margin:0; padding:0;}
+header {background:#111; padding:20px; text-align:center; font-size:32px; font-weight:bold;}
+nav {background:#1a1a1a; padding:10px; display:flex; justify-content:center; gap:20px;}
+nav a {color:#66aaff; text-decoration:none; font-size:18px;}
+section {padding:20px;}
+h2 {color:#66aaff;}
+.card {background:#1b1b1b; padding:15px; border-radius:10px; margin:10px 0;}
+.ranking {color:#ffaa00; font-weight:bold;}
+.form-box {background:#222; padding:20px; border-radius:10px;}
+input, select {padding:10px; width:100%; margin:8px 0; border-radius:5px; border:none;}
+button {padding:10px 20px; background:#66aaff; border:none; border-radius:5px; color:black; font-weight:bold; cursor:pointer;}
+</style>
+</head>
+<body>
+<header>PORTAL GAMER – Catálogo, Rankings y Recomendaciones</header>
+
+<nav>
+<a href="#terror">Terror</a>
+<a href="#suspenso">Suspenso</a>
+<a href="#aventura">Aventura</a>
+<a href="#scifi">Ciencia Ficción</a>
+<a href="#familia">Para la Familia</a>
+<a href="#reco">Recomendaciones</a>
+</nav>
+
+<section id="terror">
+<h2>🎃 Categoría: Terror</h2>
+<div class="card"><span class="ranking">1. Resident Evil Village</span><br>Uno de los mejores survival horror modernos.</div>
+<div class="card"><span class="ranking">2. Outlast</span><br>Terror psicológico extremo en primera persona.</div>
+<div class="card"><span class="ranking">3. Silent Hill 2</span><br>Clásico absoluto del horror psicológico.</div>
+</section>
+
+<section id="suspenso">
+<h2>🕵️ Categoría: Suspenso</h2>
+<div class="card"><span class="ranking">1. Alan Wake 2</span> – Historia profunda y atmosférica.</div>
+<div class="card"><span class="ranking">2. Control</span> – Misterio y acción en un mundo surreal.</div>
+<div class="card"><span class="ranking">3. Inside</span> – Suspenso silencioso y minimalista.</div>
+</section>
+
+<section id="aventura">
+<h2>🗺️ Categoría: Aventura</h2>
+<div class="card"><span class="ranking">1. The Legend of Zelda: Breath of the Wild</span></div>
+<div class="card"><span class="ranking">2. Uncharted 4</span></div>
+<div class="card"><span class="ranking">3. Ori and the Blind Forest</span></div>
+</section>
+
+<section id="scifi">
+<h2>🚀 Categoría: Ciencia Ficción</h2>
+<div class="card"><span class="ranking">1. Cyberpunk 2077</span></div>
+<div class="card"><span class="ranking">2. Mass Effect Trilogy</span></div>
+<div class="card"><span class="ranking">3. Titanfall 2</span></div>
+</section>
+
+<section id="familia">
+<h2>👨‍👩‍👧 Categoría: Para la Familia</h2>
+<div class="card"><span class="ranking">1. Mario Kart 8 Deluxe</span></div>
+<div class="card"><span class="ranking">2. Minecraft</span></div>
+<div class="card"><span class="ranking">3. Fall Guys</span></div>
+</section>
+
+<section id="reco">
+<h2>✨ Recomendaciones según tus gustos</h2>
+<div class="form-box">
+<form>
+<label>¿Qué género te gusta?</label>
+<select id="genero">
+<option value="terror">Terror</option>
+<option value="suspenso">Suspenso</option>
+<option value="aventura">Aventura</option>
+<option value="scifi">Ciencia Ficción</option>
+<option value="familia">Para la Familia</option>
+</select>
+
+<label>¿Prefieres juegos largos o cortos?</label>
+<select id="tiempo">
+<option value="largos">Largos</option>
+<option value="cortos">Cortos</option>
+</select>
+
+<label>¿Quieres historia profunda?</label>
+<select id="historia">
+<option value="si">Sí</option>
+<option value="no">No</option>
+</select>
+
+<button type="button" onclick="recomendar()">Obtener recomendación</button>
+</form>
+
+<p id="resultado" style="margin-top:20px; font-size:18px;"></p>
+</div>
+</section>
+
+<script>
+function recomendar() {
+    const genero = document.getElementById("genero").value;
+    let recomendacion = "";
+
+    if (genero === "terror") recomendacion = "Te recomiendo: Resident Evil Village";
+    if (genero === "suspenso") recomendacion = "Te recomiendo: Alan Wake 2";
+    if (genero === "aventura") recomendacion = "Te recomiendo: Breath of the Wild";
+    if (genero === "scifi") recomendacion = "Te recomiendo: Mass Effect Trilogy";
+    if (genero === "familia") recomendacion = "Te recomiendo: Mario Kart 8 Deluxe";
+
+    document.getElementById("resultado").innerHTML = recomendacion;
+}
+</script>
+
+</body>
+</html>
